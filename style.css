@@ -731,25 +731,23 @@ scroll-margin-top:100px;
 }
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100svh;   /* แทน 100vh (ใหม่กว่าและแม่นกว่าในมือถือ) */
   display: flex;
   align-items: center;
-  justify-content: flex-start;   /* จาก center เป็น flex-start */
-  text-align: left;              /* จาก center เป็น left */
-  padding: 0 10%;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 120px 8% 80px;  /* เผื่อ nav ด้านบน */
+  overflow: hidden;
 }
 .hero-content {
   max-width: 600px;
 }
 .bg-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translate(-50%, -50%);
   z-index: -2;
 }
 
@@ -760,4 +758,19 @@ scroll-margin-top:100px;
   inset: 0;
   background: rgba(0,0,0,0.55);
   z-index: -1;
+}
+@media (max-width:768px){
+
+.hero{
+  min-height: 100svh;
+  padding: 140px 6% 80px;
+}
+
+.hero-content{
+  max-width: 100%;
+}
+
+}
+html, body {
+  height: 100%;
 }
